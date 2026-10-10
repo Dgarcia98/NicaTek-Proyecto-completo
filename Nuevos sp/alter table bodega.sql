@@ -1,0 +1,13 @@
+USE NicaTek;
+GO
+
+-- Agregar Id_Bodega a Tbl_Detalle_Compra
+ALTER TABLE Tbl_Detalle_Compra
+ADD Id_Bodega INT NULL REFERENCES Tbl_Bodega(Id_Bodega);
+GO
+
+-- Verificar
+SELECT COLUMN_NAME, DATA_TYPE, IS_NULLABLE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Tbl_Detalle_Compra'
+ORDER BY ORDINAL_POSITION;

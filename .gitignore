@@ -1,0 +1,82 @@
+# =====================================================================
+# SECRETOS - lo mas importante de este archivo
+# ---------------------------------------------------------------------
+# appsettings.json ya no contiene credenciales, pero estas reglas evitan
+# que vuelvan a entrar por descuido en un archivo por-entorno o local.
+# =====================================================================
+appsettings.Production.json
+appsettings.Local.json
+appsettings.*.local.json
+*.pubxml.user
+secrets.json
+.env
+.env.local
+.env.*.local
+*.pfx
+*.publishsettings
+
+# Los .env del frontend SI se versionan: solo tienen la URL publica de la
+# API y Vite los incrusta en el bundle (nada que ponga ahi es secreto).
+!PaginaNicatek/.env.development
+!PaginaNicatek/.env.production
+
+# =====================================================================
+# .NET
+# =====================================================================
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+artifacts/
+publish/
+PublishProfiles/*.user
+TestResults/
+*.coverage
+*.trx
+
+# =====================================================================
+# Node / frontend
+# =====================================================================
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+coverage/
+
+# Un solo gestor de paquetes: se dejo package-lock.json.
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =====================================================================
+# Editores y sistema
+# =====================================================================
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Clave JWT de desarrollo generada automaticamente por la API.
+# Es un secreto: nunca se versiona.
+.jwt-dev-key
